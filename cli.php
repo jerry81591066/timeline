@@ -73,6 +73,9 @@ case 'export':
     echo json_encode($result, JSON_PRETTY_PRINT);
 
     break;
+
+default:
+	echo "Unknown argument: {$argv[1]}";
 }
 
 ?>
