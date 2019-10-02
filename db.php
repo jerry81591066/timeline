@@ -9,15 +9,47 @@ class Sqlite {
     }
 
     public function getData(string $order = 'ASC') {
+
+        $result = [];
+        foreach ($this->getHeaderData() as $data)
+            $result[] = $data;
+
+
         if (! in_array(strtoupper($order), ['ASC', 'DESC']))
             $order = 'ASC';
 
-        $sql = "SELECT * FROM main ORDER BY date " . $order;
+        $sql = "SELECT * FROM main WHERE position = 'normal' ORDER BY date " . $order;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
+            $result[] = $data;
+
+        foreach ($this->getFooterData() as $data)
+            $result[] = $data;
+
+        return $result;
+    }
+
+    public function getHeaderData()
+    {
+        $sql = "SELECT * FROM main WHERE position = 'header'";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = [];
         while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
             $result[] = $data;
+
+        return $result;
+    }
+
+    public function getFooterData()
+    {
+        $sql = "SELECT * FROM main WHERE position = 'footer'";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        $result = [];
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
+            $result[]  =$data;
 
         return $result;
     }

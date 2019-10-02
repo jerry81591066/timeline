@@ -16,6 +16,7 @@ case 'build':
         'title TEXT NOT NULL, ' .
         'content TEXT NOT NULL, ' .
         'photos TEXT, ' .
+        'position TEXT NOT NULL DEFAULT normal,' .
         'created_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL)';
 
     $stmt = $db->pdo->prepare($sql);
