@@ -2,7 +2,10 @@
 
 
 if (! isset($_GET['order'])) {
-    header('Location: ' . $_SERVER['REQUEST_URI'] . '?order=asc');
+    if (count($_GET) === 0)
+        header('Location: ' . $_SERVER['REQUEST_URI'] . '?order=asc');
+    else
+        header('Location: ' . $_SERVER['REQUEST_URI'] . '&order=asc');
     exit;
 }
 
