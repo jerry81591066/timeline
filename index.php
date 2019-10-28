@@ -23,9 +23,19 @@ $data = $db->getData($_GET['order']);
   <title>Timeline</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" type="text/css" href="main.css"/>
+  <script type="text/javascript" src="js/timer.js"></script>
 </head>
 
 <div class="timeline">
+
+  <div class="entry">
+    <div class="title">
+      <h3>Days in counting</h3>
+    </div>
+    <div class="body" style="margin-bottom: 10px">
+      <p><span id="days" style="font-size: larger"></span></p>
+    </div>
+  </div>
 
 <?php
 foreach ($data as $item) { 
