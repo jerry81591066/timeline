@@ -11,7 +11,7 @@ $db = new Sqlite();
 switch ($argv[1]) {
 case 'build':
     $sql = 'CREATE TABLE main (' .
-        'date TEXT NOT NULL, ' .
+        'date TEXT, ' .
         'description TEXT, ' .
         'title TEXT NOT NULL, ' .
         'content TEXT NOT NULL, ' .
@@ -64,7 +64,7 @@ case 'import':
     break;
 
 case 'export':
-    $sql = "SELECT * FROM main ORDER BY date ASC";
+    $sql = "SELECT * FROM main ORDER BY created_at ASC";
     $stmt = $db->pdo->prepare($sql);
     $stmt->execute();
     $result = [];

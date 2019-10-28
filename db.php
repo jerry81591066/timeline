@@ -32,7 +32,7 @@ class Sqlite {
 
     public function getHeaderData()
     {
-        $sql = "SELECT * FROM main WHERE position = 'header'";
+        $sql = "SELECT * FROM main WHERE position = 'header' ORDER BY created_at";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = [];
@@ -44,7 +44,7 @@ class Sqlite {
 
     public function getFooterData()
     {
-        $sql = "SELECT * FROM main WHERE position = 'footer'";
+        $sql = "SELECT * FROM main WHERE position = 'footer' ORDER BY created_at";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = [];

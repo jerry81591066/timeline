@@ -1,0 +1,66 @@
+[
+    {
+        "date": "2019 08\/27",
+        "description": "description",
+        "title": "Title 1",
+        "content": "This is the content.\nAnd some more.",
+        "photos": null,
+        "position": "normal",
+        "created_at": "2019-08-27 00:00:00"
+    },
+    {
+        "date": "2019 08\/29",
+        "description": "blablabla",
+        "title": "Title 2",
+        "content": "This is the content.",
+        "photos": "[[\"https:\\\/\\\/via.placeholder.com\\\/1920x1080\"],[\"https:\\\/\\\/via.placeholder.com\\\/800x600\",\"https:\\\/\\\/via.placeholder.com\\\/800x600\"]]",
+        "position": "normal",
+        "created_at": "2019-08-29 00:00:00"
+    },
+    {
+        "date": "2019 09\/02",
+        "description": null,
+        "title": "Title 3",
+        "content": "This is the content.\nAnd some more.",
+        "photos": null,
+        "position": "normal",
+        "created_at": "2019-09-02 00:00:00"
+    },
+    {
+        "date": "2019 09\/05",
+        "description": "more description",
+        "title": "Title 4",
+        "content": "This is the content.\nAnd some more.",
+        "photos": null,
+        "position": "normal",
+        "created_at": "2019-09-05 00:00:00"
+    },
+    {
+        "date": "This is the header",
+        "description": "description",
+        "title": "Title 0",
+        "content": "Header will always stays at the top of the timeline.",
+        "photos": null,
+        "position": "header",
+        "created_at": "2019-10-02 00:00:00"
+    },
+    {
+        "date": "This is the first footer",
+        "description": "description",
+        "title": "Title 9",
+        "content": "Footer will always stays at the bottom of the timeline.",
+        "photos": null,
+        "position": "footer",
+        "created_at": "2019-10-02 00:00:00"
+    },
+        {
+        "date": "This is the second footer",
+        "description": "description",
+        "title": "Title 9",
+        "content": "Footer will always stays at the bottom of the timeline.",
+        "photos": null,
+        "position": "footer",
+        "created_at": "2019-10-28 00:00:00"
+    }
+
+]
