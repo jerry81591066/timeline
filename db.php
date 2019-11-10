@@ -21,8 +21,12 @@ class Sqlite {
         $sql = "SELECT * FROM main WHERE position = 'normal' ORDER BY date " . $order;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
-        while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $data['tag'] = str_replace([' ', '/'], '_', $data['date']);
             $result[] = $data;
+        }
+
+        $result[count($result) - 1]['tag'] = 'newest';
 
         foreach ($this->getFooterData() as $data)
             $result[] = $data;
@@ -36,8 +40,10 @@ class Sqlite {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = [];
-        while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $data['tag'] = 'header';
             $result[] = $data;
+        }
 
         return $result;
     }
@@ -48,8 +54,10 @@ class Sqlite {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = [];
-        while ($data = $stmt->fetch(PDO::FETCH_ASSOC))
-            $result[]  =$data;
+        while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $data['tag'] = 'footer';
+            $result[] = $data;
+        }
 
         return $result;
     }

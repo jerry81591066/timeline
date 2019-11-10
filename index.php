@@ -44,11 +44,12 @@ foreach ($data as $item) {
     $title = $item['title'];
     $content = preg_replace('/[\x0a]/', '<br>', $item['content']);
     $photos = $item['photos'] ?? null;
+    $tag = $item['tag'];
 
     echo <<<EOF
   <div class="entry">
     <div class="title">
-      <h3>$date</h3>
+      <h3><a name="$tag">$date</a></h3>
 EOF;
 
     if (! is_null($description)) {
